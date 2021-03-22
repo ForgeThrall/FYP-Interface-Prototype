@@ -5,9 +5,31 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.gridContainer {
+	margin: 0;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 60px repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
 }
+
+.gridContainer > div {
+	border: 1px solid lightGray;
+	padding: 8px;
+}
+
+.ribbon { grid-area: 1 / 1 / 2 / 7; }
+.courses { grid-area: 2 / 1 / 4 / 2; }
+.sem-1 { grid-area: 2 / 2 / 3 / 3; }
+.sem-2 { grid-area: 2 / 3 / 3 / 4; }
+.sem-3 { grid-area: 2 / 4 / 3 / 5; }
+.sem-4 { grid-area: 2 / 5 / 3 / 6; }
+.sem-5 { grid-area: 3 / 2 / 4 / 3; }
+.sem-6 { grid-area: 3 / 3 / 4 / 4; }
+.sem-7 { grid-area: 3 / 4 / 4 / 5; }
+.sem-8 { grid-area: 3 / 5 / 4 / 6; }
