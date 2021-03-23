@@ -18,13 +18,21 @@ body {
 	grid-row-gap: 0px;
 }
 
-.gridContainer > div {
-	border: 1px solid lightGray;
+.gridContainer * {
+	outline: 1px solid lightGray;
+	/*border-radius: 2px;*/
+	background: white;
 	padding: 8px;
+}
+
+.gridContainer > div {
+	padding: 0;
 }
 
 .ribbon { grid-area: 1 / 1 / 2 / 7; }
 .courses { grid-area: 2 / 1 / 4 / 2; }
+/* getting this selectors on the components is currently a little hacky */
+/* semester json id must match with these (or vice versa) */
 .sem-1 { grid-area: 2 / 2 / 3 / 3; }
 .sem-2 { grid-area: 2 / 3 / 3 / 4; }
 .sem-3 { grid-area: 2 / 4 / 3 / 5; }
