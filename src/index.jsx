@@ -19,7 +19,7 @@ class App extends React.Component {
 			<div className="gridContainer">
 				<div className="ribbon">This is the ribbon</div>
 				<div className="courses">Course list here</div>
-				{this.state.semesters.map((sem, index) => {
+				{Object.values(this.state.semesters).map((sem, index) => {
 					return <Column key={sem.id} sem={sem} courses={this.state.courses} />
 				})}
 			</div>
