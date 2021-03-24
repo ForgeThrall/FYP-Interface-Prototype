@@ -6,12 +6,12 @@ export default class Course extends React.Component {
 		<Draggable draggableId={this.props.id} index={this.props.index}>
 			{provided => (
 				<div
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          ref={provided.innerRef}
-        >
-        	{this.props.desc}
-        </div>
+					{...provided.draggableProps}
+					{...provided.dragHandleProps}
+					ref={provided.innerRef}
+				>
+					{this.props.desc}
+				</div>
 			)}
 		</Draggable>
 	)}
