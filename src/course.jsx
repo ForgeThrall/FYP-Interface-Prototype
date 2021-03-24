@@ -9,6 +9,7 @@ export default class Course extends React.Component {
 					{...provided.draggableProps}
 					{...provided.dragHandleProps}
 					ref={provided.innerRef}
+					className="courseLabel"
 				>
 					{this.props.desc}
 				</div>
