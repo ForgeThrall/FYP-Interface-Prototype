@@ -27,19 +27,9 @@ class App extends React.Component {
 
 		newDestCourseIds.splice(destination.index, 0, draggableId);
 
-		const newState = {
-			semesters: {
-				...this.state.semesters,
-				[sourceSem.id]: {
-					...sourceSem,
-					courseIds: newSourceCourseIds
-				},
-				[destSem.id]: {
-					...destSem,
-					courseIds: newDestCourseIds
-				},
-			}
-		}
+		const newState = this.state;
+		newState.semesters[sourceSem.id].courseIds = newSourceCourseIds;
+		newState.semesters[destSem.id].courseIds = newDestCourseIds;
 
 		this.setState(newState);
 	}
