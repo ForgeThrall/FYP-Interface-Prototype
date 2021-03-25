@@ -5,8 +5,15 @@ import initialData from './initialData';
 import Column from './column';
 import { DragDropContext } from 'react-beautiful-dnd';
 
+const generateState = () => {
+	const state = initialData;
+	/* generate availableCourses here */
+
+	return state;
+}
+
 class App extends React.Component {
-	state = initialData;
+	state = generateState();
 
 	onDragEnd = result => {
 		const { destination, source, draggableId } = result;
