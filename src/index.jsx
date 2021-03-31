@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import initialData from './initialData';
 import Column from './column';
+import logo from './UCM logo darkmode.png';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 const generateState = () => {
 	const state = initialData;
-	/* generate availableCourses here */
+	// state.semesters.courselist.courseIds = Object.keys(state.courses);
 
 	return state;
 }
@@ -44,12 +45,12 @@ class App extends React.Component {
 	render() { return (
 		<DragDropContext onDragEnd={this.onDragEnd}>
 			<div className="gridContainer">
-				<div className="ribbon">This is the ribbon</div>
-				<div className="courses">Course list here</div>
+				<div className="ribbon"> <img src={logo} alt="UCM Logo" height='100%'/></div>
+				{/*<Courselist courseIds={this.state.availableCourses} courses={this.state.courses} />*/}
 				{Object.values(this.state.semesters).map((sem, index) => {
 					return <Column key={sem.id} sem={sem} courses={this.state.courses} />
 				})}
-				<div className="catalog">Major catalog here</div>
+				<div className="catalog">Major catalog</div>
 			</div>
 		</DragDropContext>
 	)}

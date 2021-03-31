@@ -5,11 +5,13 @@ const initialData = {
 		'course-3': { id: 'course-3', desc: 'Programming II' },
 		'course-4': { id: 'course-4', desc: 'Data Structures' },
 		'course-5': { id: 'course-5', desc: 'Algorithm Design and Analysis' },
+		'course-6': { id: 'course-6', desc: 'Some other class' },
 	},
 	availableCourses: {
 		/* Auto-populated from master course list minus semester course lists on 'boot' */
 	},
 	semesters: {
+		'courselist': { id: 'courselist', title: 'Course List',   courseIds: ['course-6']},
 		'sem-1': { id: 'sem-1', title: 'Fall 20',   courseIds: ['course-1', 'course-2', 'course-3']},
 		'sem-2': { id: 'sem-2', title: 'Spring 21', courseIds: []},
 		'sem-3': { id: 'sem-3', title: 'Fall 21',   courseIds: ['course-4']},
