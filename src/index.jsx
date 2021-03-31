@@ -50,7 +50,7 @@ class App extends React.Component {
 				{Object.values(this.state.semesters).map((sem, index) => {
 					return <Column key={sem.id} sem={sem} courses={this.state.courses} />
 				})}
-				<div className="catalog">Major catalog</div>
+				<div className="catalog">Major catalog placeholder</div>
 			</div>
 		</DragDropContext>
 	)}
