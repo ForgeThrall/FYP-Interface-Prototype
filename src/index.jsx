@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import initialData from './initialData';
 import Semester from './semester';
+import AvailableCourses from './availableCourses';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 const generateState = () => {
 	const state = initialData;
 	/* generate availableCourses here */
+	state.availableCourses = Object.keys(state.courses);
+
+	// Remove all planned courses from the available courses list
+	// Makes no sense to be able to add a course that you're already taking
+	// Maybe move this filter to the AvailableCourses render()?
+	for(const semId in state.semesters){
+		const sem = state.semesters[semId];
+		console.log("sem ", sem)
+		for(const courseIdx in sem.courseIds){
+			const courseId = sem.courseIds[courseIdx];
+			console.log("c Idx ", courseId);
+			state.availableCourses.splice(state.availableCourses.indexOf(courseId), 1);
+		}
+	}
 
 	return state;
 }
@@ -45,7 +60,7 @@ class App extends React.Component {
 		<DragDropContext onDragEnd={this.onDragEnd}>
 			<div className="gridContainer">
 				<div className="ribbon">This is the ribbon</div>
-				<div className="courses">Course list here</div>
+				<AvailableCourses courseIds={this.state.availableCourses} courses={this.state.courses}/>
 				{Object.values(this.state.semesters).map((sem, index) => {
 					return <Semester key={sem.id} sem={sem} courses={this.state.courses} />
 				})}
